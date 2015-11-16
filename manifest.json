@@ -1,0 +1,29 @@
+{
+  "manifest_version": 2,
+  "name": "Jira Ticket Extractor",
+  "description": "This extension gathers tickets from your Active Sprint Board tab and output in a plain printable html file.",
+  "version": "1.0",
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "storage",
+    "http://*/*", 
+    "https://*/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["*://*/*/RapidBoard.jspa*"],
+      "js": [
+        "lib/jquery.min.js", 
+        "app/extractor.js"
+      ]
+    }
+  ],
+  "background": {
+    "scripts": ["app/background.js"]
+  }
+}

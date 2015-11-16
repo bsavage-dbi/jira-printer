@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Jira Extractor Template</title>
+
+    <!-- Bootstrap core CSS -->
+   <!-- Latest compiled and minified CSS -->
+   <style>
+   table {page-break-inside: avoid;}
+   * {
+   	word-break: break-all;
+   } 
+   </style>
+<link rel="stylesheet" href="lib/bootstrap.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="lib/jquery.min.js"></script>
+<script src="lib/mustache.min.js"></script>
+<script src="lib/bootstrap.js"></script>
+<script src="app/popup.js"></script>
+
+  </head>
+
+  <body>
+    <div class="container" style="min-width:800px">
+      <h1>Edit JIRA Extractor Template</h1>
+      <textarea style="width:100%" rows="15" id="storyTemplate">
+&lt;table class=&quot;table&quot; style=&quot;border:1px solid black;&quot;&gt;
+        &lt;tr&gt;
+          &lt;th width=&quot;60%&quot;&gt;{{key}}&lt;/th&gt;
+          &lt;th width=&quot;20%&quot;&gt;{{type}} &lt;img src=&quot;{{img}}&quot;&gt; &lt;/th&gt;
+          &lt;th style=&quot;text-align: right;&quot;&gt;{{estimation}}&lt;/th&gt;
+        &lt;/tr&gt; 
+        &lt;tr&gt;
+          &lt;th colspan=&quot;3&quot; style=&quot;padding:20px; padding-top:40px; padding-bottom:40px;&quot;&gt;{{summary}}&lt;/th&gt;
+        &lt;/tr&gt;
+
+      &lt;/table&gt;
+      </textarea>
+      <a class="btn btn-success btn-block" id="saveTemplate">Save</a>
+  </div>
+  </body>
+</html>
+
