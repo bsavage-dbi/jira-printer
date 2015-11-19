@@ -17,7 +17,7 @@ function __printJiraStories() {
             story.estimation = estimationElement.html();
         }
         stories.push(story);
-    })
+    });
     window.stories = stories;
 
     var stringified = JSON.stringify(stories).replace(/\\\\/g, '\\')
@@ -35,15 +35,34 @@ function __printJiraStories() {
     });
 }
 
+function onBodyClassChange(callback) {
+    MutationObserver = window.MutationObserver || window.WebKitMutationObserver;
+
+    var observer = new MutationObserver(function(mutations, observer) {
+        callback();
+    });
+
+    observer.observe(document.body, {
+        attributes: true,
+        attributeFilter: ['class']
+    });
+}
 
 function initJiraExtension() {
-    var button = '<a class="aui-button aui-button-primary aui-style" id="print-tickets" style="margin-right: 20px" title="Print" accesskey="c">Print</a>';
+    var button = $('<a class="aui-button aui-button-primary aui-style" id="print-tickets" style="margin-right: 20px" title="Print" accesskey="c">Print</a>');
     $("#ghx-view-modes").prepend(button);
     $("#print-tickets").click(function () {
         __printJiraStories();
     })
-}
 
+    function togglePrintButton() {
+        var showButton = $('#ghx-work').find('>*').length > 0;
+        button.toggle(showButton);
+    }
+
+    onBodyClassChange(togglePrintButton);
+    togglePrintButton();
+}
 
 function waitForJquery(method) {
     if (window.jQuery) {
