@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,47 +8,50 @@
     <title>Jira Sprint Board</title>
 
     <!-- Bootstrap core CSS -->
-   <!-- Latest compiled and minified CSS -->
-   <style>
-   table {page-break-inside: avoid;}
-   * {
-   	word-break: break-all;
-   } 
-   </style>
-<link rel="stylesheet" href="lib/bootstrap.css">
+    <!-- Latest compiled and minified CSS -->
+    <style>
+        table {
+            page-break-inside: avoid;
+        }
 
-<!-- Latest compiled and minified JavaScript -->
-<script src="lib/jquery.min.js"></script>
-<script src="lib/mustache.min.js"></script>
-<script src="lib/bootstrap.js"></script>
-<script src="app/template.js"></script>
+        * {
+            word-break: break-all;
+        }
+    </style>
+    <link rel="stylesheet" href="lib/bootstrap.css">
 
-  </head>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="lib/jquery.min.js"></script>
+    <script src="lib/mustache.min.js"></script>
+    <script src="lib/bootstrap.js"></script>
+    <script src="app/template.js"></script>
 
-  <body>
-    <div class="container">
-<div style="display:none">
-     <div class="row" id="template">
-     	<table class="table" style="border:1px solid black;">
-     		<tr>
-     			<th width="60%">{{key}}</th>
-          <th width="20%"><img src="{{img}}"> {{type}}</th>
-          <th style="text-align: right;">{{estimation}}</th>
-     		</tr>	
-     		<tr>
-     			<th colspan="3" style="padding:20px; padding-top:40px; padding-bottom:40px;">{{summary}}</th>
-     		</tr>
+</head>
 
-     	</table>
-       
+<body>
+<div class="container">
+    <div style="display:none">
+        <div class="row" id="template">
+            <table class="table" style="border:1px solid black;">
+                <tr>
+                    <th width="60%">{{key}}</th>
+                    <th width="20%"><img src="{{img}}"> {{type}}</th>
+                    <th style="text-align: right;">{{estimation}}</th>
+                </tr>
+                <tr>
+                    <th colspan="3" style="padding:20px; padding-top:40px; padding-bottom:40px;">{{summary}}</th>
+                </tr>
+
+            </table>
+
+        </div>
     </div>
-      </div>
-  </div>
-      <div id="container" style="padding:50px; font-size: 22px">
+</div>
+<div id="container" style="padding:50px; font-size: 22px">
 
-      </div>
+</div>
 
-     
-  </body>
+
+</body>
 </html>
 
